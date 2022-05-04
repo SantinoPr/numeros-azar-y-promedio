@@ -1,0 +1,40 @@
+# numeros-azar-y-promedio
+using System;
+
+namespace ConsoleApp31
+{
+    internal class numeros
+    {
+        static void Main(string[] args)
+        { 
+        int lineas = 0;
+            int cnta = 0;
+            int acumu = 0;
+            do
+            {
+                int num;
+                Random azar = new Random();
+                int cnt = 0;
+                int acum = 0;
+                do
+                {
+                    num = azar.Next(22) - 1;
+                    Console.Write("{0,3}", num);
+
+                    if (num > -1) //procesa los valores validos - excluye al sentinela
+                    {
+                        acum += num; // acumula los valores válidos 
+                        cnt++;      //cuenta los ciclos válidos
+                    }
+                }
+                while (num > -1);
+                double prom = acum * 1.0 / cnt;
+                Console.WriteLine("{0,6:f2}", prom);
+                lineas++;
+            } while (lineas < 5);
+            double prome = acumu * 1.0 / cnta;
+            Console.WriteLine("{0,6:f2}", prome);
+            Console.ReadKey();
+        }
+    }
+}
